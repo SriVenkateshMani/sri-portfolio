@@ -98,12 +98,6 @@ export default function Home() {
           <div className="mb-12 text-center">
             <div className="relative inline-block">
               <span
-                aria-hidden
-                className={`${heroFont.className} absolute inset-0 translate-x-[10px] translate-y-[10px] text-[#0c1a30] opacity-80 select-none`}
-              >
-                Sri Venkatesha Mani
-              </span>
-              <span
                 className={`${heroFont.className} relative z-10 text-5xl md:text-7xl font-black uppercase tracking-[0.14em] bg-gradient-to-r from-[#8fd3ff] via-[#6fa3ff] to-[#a9a0ff] bg-clip-text text-transparent leading-tight drop-shadow-[0_10px_24px_rgba(111,163,255,0.55)]`}
               >
                 Sri Venkatesha Mani
