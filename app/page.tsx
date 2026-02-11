@@ -299,16 +299,16 @@ export default function Home() {
                     `Practiced and trained with algorithms such as SVM, Random Forest, Decision Trees, Naïve Bayes, 
                     and Neural Networks to map sensor values to speech.`,
                   ]}
-                  tools={[
-                    "Python",
-                    "Machine Learning",
-                    "Neural Networks",
-                    "SVM",
-                    "Decision Trees",
-                    "Random Forest",
-                    "Naïve Bayes",
-                  ]}
-                />
+                tools={[
+                  "Python",
+                  "Machine Learning",
+                  "Neural Networks",
+                  "SVM",
+                  "Decision Trees",
+                  "Random Forest",
+                  "Naïve Bayes",
+                ]}
+              />
               </div>
             </div>
             </div>

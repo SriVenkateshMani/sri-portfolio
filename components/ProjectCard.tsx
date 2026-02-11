@@ -9,7 +9,7 @@ type ProjectCardProps = {
   logo: string;
   description: string[];
   tools: string[];
-  github: string;
+  github?: string;
 };
 
 export default function ProjectCard({
