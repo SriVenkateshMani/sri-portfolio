@@ -33,14 +33,15 @@ export default function ExperienceCard({
       {/* Top Row: Logo Left + Text Right */}
       <div className="flex items-start gap-4">
         {logo && (
-          <div className=" relative w-14 h-14 flex-shrink-0 rounded-lg bg-black/60 border border-blue-500/40 flex items-center justify-center overflow-hidden">
+          <div className="w-14 h-14 flex-shrink-0 rounded-lg bg-black/60 border border-blue-500/40 flex items-center justify-center overflow-hidden">
             <Image
-                src={logo}
-                alt={`${company} logo`}
-                fill
-                className="object-contain p-1"
+              src={logo}
+              alt={`${company} logo`}
+              width={56}
+              height={56}
+              className="object-contain p-1"
             />
-            </div>
+          </div>
 
         )}
 

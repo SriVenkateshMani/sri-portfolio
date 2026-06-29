@@ -17,12 +17,13 @@ const EXPERIENCES = [
     location: "Boulder, CO",
     duration: "Aug 2025 – Present",
     responsibilities: [
-      `Improved race registration reliability by preventing unpaid sign-ups and adding automatic payment validation with
-      email notifications, eliminating manual reconciliation errors by 100% through the Ruby on Rails MVC architecture.`,
-      `Enhanced the admin dashboard by implementing sortable entrant views, automatic bib assignment, and on-demand
-      check-in sheet generation using PostgreSQL-backed data models for over 100 race participants.`,
-      `Strengthened system maintainability by cleaning up PayPal integration, adding Venmo payment support, and upgrading
-      the Rails environment for the 2026 season.`,
+      `Found a sneaky bug where legit PayPal payment confirmations were getting silently blocked by our own auth system, 
+      the security check meant to stop bad actors was accidentally stopping real users too. Fixed it by carving out a safe exception path, 
+      recovering 15+ missing registrations per race without weakening security anywhere else.`,
+      `Built an automated email system using Gmail SMTP that handles confirmations and reminders (a week out and a day out) for 100+ runners per race, 
+      so nobody's left wondering if their registration actually went through.`,
+      `Rebuilt the entire checkout flow from a basic PayPal redirect into a proper server-side integration using PayPal's Orders API, 
+      which opened the door to 4 payment options including Venmo, card, and Pay Later instead of just one rigid path`,
     ],
     tech: ["Ruby on Rails", "JavaScript", "HTML", "CSS", "PostgreSQL", "REST APIs", "PayPal API", "Venmo API"],
     logo: "/logos/rattlesnake_logo.png",
@@ -33,12 +34,14 @@ const EXPERIENCES = [
     location: "Boulder, CO",
     duration: "Aug 2024 – May 2025",
     responsibilities: [
-      `Designed and debugged a React-based frontend for login, authentication, and project creation pages, enabling secure
-      user access and seamless experiment management through REST API integration, improving user experience by 70%.`,
-      `Developed high-performance backend web services using Go and PostgreSQL, improving system efficiency and reducing
-      SBOL processing time by 20% while supporting integration with hardware data pipelines.`,
-      `Implemented a Flask-based web server for SBOL metadata management and JSON data streaming, enhancing trace-
-      ability by 50%, improving project reproducibility by 40% and cutting manual metadata entry time by 60%.`,
+      `Designed a 3-tier permission system (private, org, public) for shared lab data. The tricky part was making sure changing one component's 
+      access level couldn't accidentally lock other components out of data they depended on, so I built guardrails to catch that 
+      before it broke anything.`,
+      `Built a drag-and-drop interface in React (using react-dnd) that let researchers visually build out lab protocols instead of manually writing 
+      structured data by hand, then connected it to a typed backend API so it actually worked end to end.`,
+      `Built 8 API endpoints in Flask to convert biological lab data back and forth between two formats (SBOL3 and JSON), 
+      supporting 9 different nested data types so researchers could actually create and manage real protocols. 
+      5 lab researchers used it and it held up.`,
     ],
     tech: ["Go", "Python", "React", "Flask", "PostgreSQL", "REST APIs", "SBOL"],
     logo: "/logos/biocollate_logo.png",
@@ -49,9 +52,10 @@ const EXPERIENCES = [
     location: "Boulder, CO",
     duration: "Aug 2024 – May 2025",
     responsibilities: [
-      `Authored and graded the coursework for CSCI 1300: Computational Problem Solving, mentoring over 200 students in
-      C++11, C++14, C++23 programming concepts during office hours, increasing assignment completion rates by 40%.`,
-      `Ensured academic integrity for over 500 students by maintaining a seamless, violation-free examination process.`,
+      `Mentored 200+ students through C++11/14/23 concepts as a TA for CSCI 1300, holding office hours and grading coursework, 
+      helped bump assignment completion rates up by 40% along the way.`,
+      `Kept exams running clean and violation-free for 500+ students, basically the unglamorous but important work of making sure the academic 
+      integrity side of things never broke down.`,
     ],
     tech: ["C++", "Teaching", "Mentorship", "Grading"],
     logo: "/logos/cub_logo.png",
@@ -62,9 +66,9 @@ const EXPERIENCES = [
     location: "Remote",
     duration: "May 2024 – Aug 2024",
     responsibilities: [
-      `Developed user friendly web components, enhancing UX and navigation based on 200+ feedback responses.`,
-      `Removed 1200+ fake accounts in 2 months by building PHP based bot detection logic using behavior pattern analysis.`,
-      `Deployed reCAPTCHA based validation, reducing monthly spam entries by 150+ through automated filtering.`
+      `Killed 20 to 50 fake bot signups a day by building a smarter validation check at registration instead of cleaning up fake accounts after the fact`,
+      `Layered in Google reCAPTCHA on top of that so bots couldn't just dodge the fix by switching email domains, basically closing the loophole that was left open.`,
+      `Built a responsive listing page for interview experiences from scratch, hand-rolling the layout with custom CSS and Bootstrap's grid so it looked right on both desktop and mobile.`
     ],
     tech: ["PHP", "JavaScript", "HTML", "CSS", "Bootstrap", "MySQL"],
     logo: "/logos/itjobxs_logo.png",
@@ -75,11 +79,12 @@ const EXPERIENCES = [
     location: "Chennai, India",
     duration: "May 2022 – Aug 2022",
     responsibilities: [
-      `Refined backend API framework, improving response time by 30% by refining database queries and request handling.`,
-      `Implemented JWT authentication for RESTful APIs, reducing unauthorised access to fewer than 5 incidents per month 
-      by enforcing secure token based authentication.`,
-      `Streamlined sprint planning using Jira, Microsoft Teams, and GitHub Wiki, cutting turnaround by 20 hours per 
-      month through improved task tracking and team collaboration.`,
+      `Dug into the backend API and cleaned up slow database queries and request handling, 
+      knocked response times down by 30% without touching the actual features.`,
+      `Locked down the RESTful APIs with JWT-based token authentication, which cut unauthorized access 
+      down to fewer than 5 incidents a month instead of letting it run loose..`,
+      `Tightened up sprint planning by getting Jira, Microsoft Teams, and GitHub Wiki actually talking to each other properly, 
+      saved the team about 20 hours a month that used to get lost in disorganized task tracking.`,
     ],
     tech: ["Python", "Flask", "JWT", "MySQL", "Jira", "GitHub"],
     logo: "/logos/tfe_logo.png",
@@ -92,7 +97,7 @@ export default function Home() {
       <CodeRain />
       <Navbar />
 
-      <main id="home" className="relative z-10 min-h-screen bg-black/50 text-blue-400 flex flex-col items-center px-6 pt-28 scroll-smooth">
+      <main id="home" className="relative z-10 min-h-screen bg-black/30 text-blue-400 flex flex-col items-center px-6 pt-28 scroll-smooth">
         <div className="w-full max-w-5xl">
           {/* Hero */}
           <div className="mb-12 text-center">
@@ -103,32 +108,30 @@ export default function Home() {
                 Sri Venkatesha Mani
               </span>
             </div>
-            <p className="mt-6 text-lg md:text-xl text-blue-200">AI Software Engineer</p>
+            <p className="mt-6 text-lg md:text-xl text-blue-200">Software Engineer</p>
           </div>
 
           {/* About */}
           <div className="relative border border-blue-500/60 rounded-2xl p-8 backdrop-blur-sm bg-black/70 shadow-[0_0_40px_#3b82f6]">
-            <h2 className="text-sm uppercase tracking-widest text-blue-400 mb-4">
-              About Me
-            </h2>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify">
-              Hey there, I’m Sri. I want to introduce myself without sounding like a cover letter, so here’s the simpler version: Rewind to May 2025, 
-              I wrapped up my Master’s in Computer Science at University of Colorado Boulder. Currently, I’m doing a small Full-Stack Engineer gig in a 
-              charity called “The Rattlesnake Ramble Charity Trail Race”. Somewhere between the chaos of Bachelors and Grad school, 
-              I squeezed in 3 internships whewww!!! And I spent two whole semesters as a Graduate Teaching Assistant. Along the way, 
-              I’ve built a strong hands on experience across full stack development, API design, cloud & deployment and databases through 
-              real production work. I've also developed deep expertise in Machine Learning and Deep Learning through coursework and projects, thanks 
-              to my Grad school and Bachelors. I absolutely enjoy building machine learning powered systems that go beyond notebooks 
-              and actually ship as real, full stack products.
+              Hey there, I&apos;m Sri. I don&apos;t wanna be sounding like a cover letter, so here&apos;s the simpler version: Alright so, I wrapped up my Master&apos;s in Computer Science at the University of Colorado Boulder in May 2025. Right now, I&apos;m doing a Full-Stack Engineer gig for a charity called &quot;The Rattlesnake Ramble Charity Trail Race.&quot;
+            </p>
+            <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
+              Somewhere between the chaos of Bachelors and Grad school, I squeezed in 3 internships whewww!!! And I spent two whole semesters as a Graduate Teaching Assistant. Along the way, I&apos;ve built strong hands-on experience across full-stack development, API design, cloud &amp; deployment, and databases through real production work.
+            </p>
+            <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
+              I&apos;ve also developed deep expertise in Machine Learning and Deep Learning through coursework and projects. I absolutely love building full-stack features end to end from the ground up, all the way to shipping a real working product. And doing it with AI? Oh yeah, THAT&apos;S WHAT I LIVE FOR.
             </p>
             <div className="mt-6 flex justify-center">
               <a
                 href="sri_venkatesha_mani_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-blue-200 text-blue-50 text-sm font-semibold bg-blue-500/20 hover:bg-blue-500/30 hover:border-white shadow-[0_0_26px_rgba(99,179,237,0.55),0_0_12px_rgba(99,179,237,0.35)] transition duration-200"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-blue-300/60 text-blue-50 text-sm font-semibold bg-blue-500/20 hover:bg-blue-500/30 hover:border-white shadow-[0_0_26px_rgba(99,179,237,0.55),0_0_12px_rgba(99,179,237,0.35)] transition duration-200 group"
               >
-                <span>Resume</span>
+                <span className="text-base">&#128196;</span>
+                <span>That One Doc Everyone Asks For</span>
+                <span className="opacity-60 group-hover:opacity-100 transition-opacity text-xs">&#8595;</span>
               </a>
             </div>
           </div>
@@ -227,7 +230,7 @@ export default function Home() {
                 institution="University of Colorado Boulder"
                 logo="/logos/cub_logo.png"
                 description={[
-                  `Recipe Realm is a MERN stack web application I developed to manage recipes.With user authentication and full CRUD operations, 
+                  `Recipe Realm is a MERN stack web application I developed to manage recipes. With user authentication and full CRUD operations, 
                   users can effortlessly manage and share their culinary creations.`,
                   `The application features interactive elements such as likes, comments, save posts and an intuitive search functionality, 
                   fostering a vibrant community of food enthusiasts.`,

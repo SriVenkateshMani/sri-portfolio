@@ -12,7 +12,7 @@ const SKILLS: SkillGroup[] = [
   },
   {
     title: "Frameworks & Technologies",
-    skills: ["Node", "Express", "Next", "Rails", "Flask", "Django", "React", "Angular", "REST APIs", "GraphQL", "Linux/Unix"],
+    skills: ["Node.js", "Express", "Next.js", "Rails", "Flask", "Django", "FastApi", "React", "Angular", "REST APIs", "GraphQL"],
   },
   {
     title: "Databases",
