@@ -13,19 +13,16 @@ import ContactSection from "../components/ContactSection";
 const EXPERIENCES = [
   {
     role: "Full-Stack Developer",
-    company: "Rattlesnake Ramble Charity Trail Race",
+    company: "Rattlesnake Ramble ORG",
     location: "Boulder, CO",
-    duration: "Aug 2025 – Present",
+    duration: "Aug 2025 – Aug 2026",
     responsibilities: [
-      `Found a sneaky bug where legit PayPal payment confirmations were getting silently blocked by our own auth system, 
-      the security check meant to stop bad actors was accidentally stopping real users too. Fixed it by carving out a safe exception path, 
-      recovering 15+ missing registrations per race without weakening security anywhere else.`,
-      `Built an automated email system using Gmail SMTP that handles confirmations and reminders (a week out and a day out) for 100+ runners per race, 
-      so nobody's left wondering if their registration actually went through.`,
-      `Rebuilt the entire checkout flow from a basic PayPal redirect into a proper server-side integration using PayPal's Orders API, 
-      which opened the door to 4 payment options including Venmo, card, and Pay Later instead of just one rigid path`,
+      `I joined Rattlesnake Ramble to redesign a race registration platform that had been running on PHP for years. The fun part? It came with nearly 20 years of race history that absolutely could not disappear. 🫠`,
+      `I led the move to a modern platform, rebuilding 20+ features and migrating 2,500+ historical records from MySQL to PostgreSQL while keeping all those years of racer data intact.`,
+      `Payments made things interesting too. 💸 PayPal redirects sometimes left paid users marked unpaid, so I reworked the flow with webhooks, server-side verification, idempotency, and retries to keep payment state accurate.`,
+      `And yes, I eventually put an LLM in the admin dashboard. 🤖 Why click through seven different workflows when you can just ask?`,
     ],
-    tech: ["Ruby on Rails", "JavaScript", "HTML", "CSS", "PostgreSQL", "REST APIs", "PayPal API", "Venmo API"],
+    tech: ["TypeScript", "Express", "React", "PostgreSQL", "AWS Lambda", "LLM Tool Calling", "MySQL", "Webhooks"],
     logo: "/logos/rattlesnake_logo.png",
   },
   {
@@ -34,16 +31,13 @@ const EXPERIENCES = [
     location: "Boulder, CO",
     duration: "Aug 2024 – May 2025",
     responsibilities: [
-      `Designed a 3-tier permission system (private, org, public) for shared lab data. The tricky part was making sure changing one component's 
-      access level couldn't accidentally lock other components out of data they depended on, so I built guardrails to catch that 
-      before it broke anything.`,
-      `Built a drag-and-drop interface in React (using react-dnd) that let researchers visually build out lab protocols instead of manually writing 
-      structured data by hand, then connected it to a typed backend API so it actually worked end to end.`,
-      `Built 8 API endpoints in Flask to convert biological lab data back and forth between two formats (SBOL3 and JSON), 
-      supporting 9 different nested data types so researchers could actually create and manage real protocols. 
-      5 lab researchers used it and it held up.`,
+      `Turns out, a lot of scientific experiments still happens with notebooks, paperwork, and a whole lot of manual tracking. We thought software could help. 🧬`,
+      `I worked directly with researchers and turned their very real, sometimes messy requirements into a LIMS/ELN'ishh platform, owning it from architecture and development to shipping.`,
+      `Built it with React, FastAPI, PostgreSQL, Docker, and AWS, with 27 SBOL/LabOP APIs underneath. One of my favorite problems was dependency management: change one biological component and suddenly everything downstream matters.`,
+      `Then came CatalystX 🤖, where I used LangChain, LangGraph, pgvector, and LLM tool calling to build RAG and agentic workflows for searching scientific data and tracing dependencies with natural language.`,
+      `I thought switching to computer science in high school meant I was done with biology. Biology found its way back into my codebase. :)`,
     ],
-    tech: ["Go", "Python", "React", "Flask", "PostgreSQL", "REST APIs", "SBOL"],
+    tech: ["React", "FastAPI", "PostgreSQL", "Docker", "AWS", "ECS Fargate", "SBOL", "LabOP", "LangChain", "LangGraph", "pgvector", "RAG"],
     logo: "/logos/biocollate_logo.png",
   },
   {
@@ -52,10 +46,9 @@ const EXPERIENCES = [
     location: "Boulder, CO",
     duration: "Aug 2024 – May 2025",
     responsibilities: [
-      `Mentored 200+ students through C++11/14/23 concepts as a TA for CSCI 1300, holding office hours and grading coursework, 
-      helped bump assignment completion rates up by 40% along the way.`,
-      `Kept exams running clean and violation-free for 500+ students, basically the unglamorous but important work of making sure the academic 
-      integrity side of things never broke down.`,
+      `Teaching people to code is surprisingly good at exposing how well you actually understand code yourself.`,
+      `Worked with 100+ students in CSCI 1300, helping them go from “why is my code doing that?” to getting comfortable with C++ and core programming concepts.`,
+      `Designed and graded assignments and exams, held office hours, debugged a lot of C++, ...and learned that sometimes explaining recursion and pointers clearly is harder than writing the code yourself.`,
     ],
     tech: ["C++", "Teaching", "Mentorship", "Grading"],
     logo: "/logos/cub_logo.png",
@@ -66,11 +59,12 @@ const EXPERIENCES = [
     location: "Remote",
     duration: "May 2024 – Aug 2024",
     responsibilities: [
-      `Killed 20 to 50 fake bot signups a day by building a smarter validation check at registration instead of cleaning up fake accounts after the fact`,
-      `Layered in Google reCAPTCHA on top of that so bots couldn't just dodge the fix by switching email domains, basically closing the loophole that was left open.`,
-      `Built a responsive listing page for interview experiences from scratch, hand-rolling the layout with custom CSS and Bootstrap's grid so it looked right on both desktop and mobile.`
+      `This one had me everywhere. Frontend, backend, databases, authentication, bot prevention, cloud, deployment... pretty much the whole map.`,
+      `I worked on an interview-experiences platform using React, Node.js/Express, and MySQL, building across the application from the user-facing experience all the way down to the APIs and database.`,
+      `Then there was everything around the application itself: keeping fake registrations out, getting it running on AWS, working with EC2, Route 53 and CloudFront, and configuring Nginx in front of the backend.`,
+      `A full-stack internship in the very literal sense of the word.`,
     ],
-    tech: ["PHP", "JavaScript", "HTML", "CSS", "Bootstrap", "MySQL"],
+    tech: ["React", "Node.js", "Express", "MySQL", "AWS", "EC2", "Route 53", "CloudFront", "Nginx"],
     logo: "/logos/itjobxs_logo.png",
   },
   {
@@ -79,12 +73,10 @@ const EXPERIENCES = [
     location: "Chennai, India",
     duration: "May 2022 – Aug 2022",
     responsibilities: [
-      `Dug into the backend API and cleaned up slow database queries and request handling, 
-      knocked response times down by 30% without touching the actual features.`,
-      `Locked down the RESTful APIs with JWT-based token authentication, which cut unauthorized access 
-      down to fewer than 5 incidents a month instead of letting it run loose..`,
-      `Tightened up sprint planning by getting Jira, Microsoft Teams, and GitHub Wiki actually talking to each other properly, 
-      saved the team about 20 hours a month that used to get lost in disorganized task tracking.`,
+      `First software internship. First production APIs. First time realizing there’s a lot more to software engineering than getting the code to run. :)`,
+      `Spent most of my time in Python and Flask, building and refining REST APIs, working with databases, and getting my hands dirty with authentication and JWTs.`,
+      `Also got my first real look at how software gets built in a team: GitHub, Jira, sprints, documentation, debugging, and learning that shipping software is very much a team sport.`,
+      `Walked in knowing how to code. Walked out knowing why that was only half the problem.`,
     ],
     tech: ["Python", "Flask", "JWT", "MySQL", "Jira", "GitHub"],
     logo: "/logos/tfe_logo.png",
@@ -114,13 +106,16 @@ export default function Home() {
           {/* About */}
           <div className="relative border border-blue-500/60 rounded-2xl p-8 backdrop-blur-sm bg-black/70 shadow-[0_0_40px_#3b82f6]">
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify">
-              Hey there, I&apos;m Sri. I don&apos;t wanna be sounding like a cover letter, so here&apos;s the simpler version: Alright so, I wrapped up my Master&apos;s in Computer Science at the University of Colorado Boulder in May 2025. Right now, I&apos;m doing a Full-Stack Engineer gig for a charity called &quot;The Rattlesnake Ramble Charity Trail Race.&quot;
+              Hey there, I&apos;m Sri. I don&apos;t wanna sound like a cover letter, so here&apos;s the simpler version: I&apos;ve spent the last 2 years building AI-enabled full-stack applications end to end and deploying them in the cloud, mostly on AWS. Well, only on AWS. <strong>I LOVE AWS.</strong> Basically taking things from “we should probably build this” to something real people can actually use. <strong>SAY WHAT??</strong>
             </p>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
-              Somewhere between the chaos of Bachelors and Grad school, I squeezed in 3 internships whewww!!! And I spent two whole semesters as a Graduate Teaching Assistant. Along the way, I&apos;ve built strong hands-on experience across full-stack development, API design, cloud &amp; deployment, and databases through real production work.
+              During school, I worked one internship during my Bachelor&apos;s and another during my Master&apos;s. Then came BioCollate, a Boulder startup I worked with in the final year of my Master&apos;s, where I got to take a product from idea to working software and own it end to end. After graduation, I joined Rattlesnake Ramble and spent nearly a year helping migrate a legacy system into a modern full-stack application. I could tell you everything I built at each place, but that would completely ruin the Experience section below, wouldn&apos;t it? <strong>Scroll down 🔫 I dare you.</strong>
             </p>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
-              I&apos;ve also developed deep expertise in Machine Learning and Deep Learning through coursework and projects. I absolutely love building full-stack features end to end from the ground up, all the way to shipping a real working product. And doing it with AI? Oh yeah, THAT&apos;S WHAT I LIVE FOR.
+              Oh yeah, plot twist: I&apos;m an AI Engineer too. At BioCollate, I built CatalystX, a RAG-powered scientific assistant that could search lab data and trace dependencies through natural-language questions, and at Rattlesnake I added LLM tool calling into the admin side of the product. I really like building software end to end and then making it smarter with AI.
+            </p>
+            <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
+              <strong>Respected Reader</strong>, if you&apos;re short on time and just want the holy document... well, the button below literally says what it is. 👇
             </p>
             <div className="mt-6 flex justify-center">
               <a
@@ -130,7 +125,7 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-blue-300/60 text-blue-50 text-sm font-semibold bg-blue-500/20 hover:bg-blue-500/30 hover:border-white shadow-[0_0_26px_rgba(99,179,237,0.55),0_0_12px_rgba(99,179,237,0.35)] transition duration-200 group"
               >
                 <span className="text-base">&#128196;</span>
-                <span>That One Doc Everyone Asks For</span>
+                <span>Here&apos;s the Boring Version :(</span>
                 <span className="opacity-60 group-hover:opacity-100 transition-opacity text-xs">&#8595;</span>
               </a>
             </div>
@@ -222,58 +217,42 @@ export default function Home() {
               Projects
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 auto-rows-fr">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6">
 
               <ProjectCard
-                title="Recipe Realm Web Application"
-                duration="Jan 2024 – May 2024"
+                title="RecipeRealm: Recipe Sharing Platform"
                 institution="University of Colorado Boulder"
-                logo="/logos/cub_logo.png"
                 description={[
-                  `Recipe Realm is a MERN stack web application I developed to manage recipes. With user authentication and full CRUD operations, 
-                  users can effortlessly manage and share their culinary creations.`,
-                  `The application features interactive elements such as likes, comments, save posts and an intuitive search functionality, 
-                  fostering a vibrant community of food enthusiasts.`,
-                  `Deployed on GCP and Netlify, Recipe Realm is accessible and scalable, offering a seamless user experience across devices.`
+                  `Built RecipeRealm, a full-stack recipe-sharing platform with JWT-secured user accounts and social interactions.`,
+                  `Dockerized MERN services and deployed them on AWS EC2 with S3-backed image and video storage, achieving 85% Jest test coverage.`
                 ]}
-                tools={["MongoDb", "Express", "React", "Node", "HTML", "CSS", "Github", "Postman", "Rest APIs", "Netlify", "Dcoker", "GCP", "Third Party APIs"]}
+                tools={["MongoDB", "Express", "React", "Node.js", "JWT", "Docker", "AWS EC2", "Amazon S3", "Jest"]}
                 github="https://github.com/SriVenkateshMani/Recipe-Realm"
               />
-
               <ProjectCard
-                title="Image Style Transfer Using Neural Networks"
-                duration="Jan 2024 – May 2024"
+                title="AI-Generated Text Detection"
                 institution="University of Colorado Boulder"
-                logo="/logos/cub_logo.png"
                 description={[
-                  `Conducted research on neural style transfer (NST) using the ResNet50 model to blend the artistic style of one image with the content of another.`,
-                  `The study demonstrated that ResNet50 compared to the traditional VGG-based approaches, enhances feature representation and improves style fidelity.`,
+                  `Fine-tuned BERT, DistilBERT, and GPT-2 using PyTorch and Hugging Face to detect AI-generated text across complex, multisource datasets.`,
+                  `Optimized hyperparameters and engineered a model pipeline that achieved 82.7% evaluation accuracy.`
                 ]}
-                tools={["Python", "TensorFlow", "Keras", "ResNet50", "VGG19", "Neural Style Transfer", "CNNs", 
-                  "Transfer Learning", "Computer Vision", "Google Colab"]}
-              />
-
-              <ProjectCard
-                title="AI-Generated Text Detection Using NLP"
-                duration="Aug 2023 – Dec 2023"
-                institution="University of Colorado Boulder"
-                logo="/logos/cub_logo.png"
-                description={[
-                  `I built a sophisticated classifier to detect AI-generated text, achieving an 85% accuracy rate. 
-                  Using models such as BERT, DistilBERT, and GPT-2, I explored the intersection of AI and linguistics.`,
-                  `This project highlights the growing need to discern authenticity in the age of machine-generated content.`,
-                  `By integrating PyTorch, Pandas, and Scikit-learn, I enhanced the model’s performance, 
-                  making it a reliable tool for text classification.`
-                ]}
-                tools={["BERT", "DistilBERT", "PyTorch", "GPT-2", "Pandas", "Scikit-learn", "Kaggle Notebooks", "Git"]}
+                tools={["BERT", "DistilBERT", "GPT-2", "PyTorch", "Hugging Face", "Hyperparameter Optimization"]}
                 github="https://github.com/Manojdeep-Dakavaram/NLP_Shared_task"
               />
 
               <ProjectCard
+                title="Local Hybrid RAG System"
+                institution="Personal Project"
+                description={[
+                  `Built a local, end-to-end RAG system from scratch that ingests PDFs, chunks document text, generates embeddings, and indexes content in OpenSearch.`,
+                  `Combined BM25 keyword retrieval with semantic k-NN search using reciprocal-rank fusion, then grounded local Llama 3.2 responses in the highest-ranked document chunks through Ollama.`
+                ]}
+                tools={["Python", "Streamlit", "OpenSearch", "Sentence Transformers", "BM25", "k-NN Vector Search", "Reciprocal-Rank Fusion", "Ollama", "Llama 3.2", "Docker"]}
+              />
+
+              <ProjectCard
                 title="Hybrid Data Driven Similarity Measures Sentiment Prediction Using Deep Learning Models"
-                duration="Dec 2022 – May 2023"
                 institution="SRM Institute of Science & Technology"
-                logo="/logos/srm_logo.png"
                 description={[
                   `Engineered an advanced stock price prediction model using machine learning techniques and sentiment analysis.`,
                   `Constructed few Deep Learning models written in Python, utilizing TensorFlow and Keras to enhance stock price prediction 
@@ -282,32 +261,6 @@ export default function Home() {
                 tools={["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "Time Series Analysis", "Regression / Forecasting Models", "LSTM (Neural Networks)"]}
                 github="https://github.com/SriVenkateshMani/Stock_prediction"
               />
-
-              <div className="md:col-span-2 flex justify-center">
-              <div className="w-full md:w-1/2">
-                <ProjectCard
-                  title="Imparting Gestures Through Voice Communication"
-                  duration="Aug 2022 – Dec 2022"
-                  institution="SRM Institute of Science & Technology"
-                  logo="/logos/srm_logo.png"
-                  description={[
-                    `Bridged the communication gap for speechless individuals by creating a wearable system that translates 
-                    hand movements into synthesized text and speech.`,
-                    `Practiced and trained with algorithms such as SVM, Random Forest, Decision Trees, Naïve Bayes, 
-                    and Neural Networks to map sensor values to speech.`,
-                  ]}
-                tools={[
-                  "Python",
-                  "Machine Learning",
-                  "Neural Networks",
-                  "SVM",
-                  "Decision Trees",
-                  "Random Forest",
-                  "Naïve Bayes",
-                ]}
-              />
-              </div>
-            </div>
             </div>
           </section>
 

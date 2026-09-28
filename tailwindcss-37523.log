@@ -1,0 +1,87 @@
+2026-09-18T01:20:52.402551Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2026-09-18T01:20:52.402870Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "/Users/venkatesh/Documents/sri-portfolio", pattern: "**/*", negated: false }
+2026-09-18T01:20:52.403339Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2026-09-18T01:20:52.403354Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "/Users/venkatesh/Documents/sri-portfolio" }
+2026-09-18T01:20:52.405225Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.406356Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app"
+2026-09-18T01:20:52.406530Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app/layout.tsx"
+2026-09-18T01:20:52.406634Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app/page.tsx"
+2026-09-18T01:20:52.406713Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app/globals.css"
+2026-09-18T01:20:52.406778Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/postcss.config.mjs"
+2026-09-18T01:20:52.407057Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/README.md"
+2026-09-18T01:20:52.407145Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components"
+2026-09-18T01:20:52.407210Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/Navbar.tsx"
+2026-09-18T01:20:52.407240Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/Skillssection.tsx"
+2026-09-18T01:20:52.407269Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/ExperienceCard.tsx"
+2026-09-18T01:20:52.407296Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/ProjectCard.tsx"
+2026-09-18T01:20:52.407321Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/AcademicCard.tsx"
+2026-09-18T01:20:52.407346Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/CodeRain.tsx"
+2026-09-18T01:20:52.407371Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components/ContactSection.tsx"
+2026-09-18T01:20:52.407500Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public"
+2026-09-18T01:20:52.407927Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/academics"
+2026-09-18T01:20:52.408336Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/file.svg"
+2026-09-18T01:20:52.408456Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/logos"
+2026-09-18T01:20:52.408542Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/vercel.svg"
+2026-09-18T01:20:52.408578Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/next.svg"
+2026-09-18T01:20:52.408607Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/globe.svg"
+2026-09-18T01:20:52.408636Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/window.svg"
+2026-09-18T01:20:52.408691Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/package.json"
+2026-09-18T01:20:52.409188Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/tsconfig.json"
+2026-09-18T01:20:52.410206Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/eslint.config.mjs"
+2026-09-18T01:20:52.410262Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/next.config.ts"
+2026-09-18T01:20:52.410932Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.410950Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.410959Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.410966Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 20 file(s)
+2026-09-18T01:20:52.412233Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/ContactSection.tsx"
+2026-09-18T01:20:52.412308Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/Skillssection.tsx"
+2026-09-18T01:20:52.412465Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/ExperienceCard.tsx"
+2026-09-18T01:20:52.412572Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/public/file.svg"
+2026-09-18T01:20:52.412389Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/app/layout.tsx"
+2026-09-18T01:20:52.412644Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/ProjectCard.tsx"
+2026-09-18T01:20:52.412648Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/public/vercel.svg"
+2026-09-18T01:20:52.412783Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/AcademicCard.tsx"
+2026-09-18T01:20:52.412853Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/public/next.svg"
+2026-09-18T01:20:52.412900Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/CodeRain.tsx"
+2026-09-18T01:20:52.412962Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/public/globe.svg"
+2026-09-18T01:20:52.413098Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/postcss.config.mjs"
+2026-09-18T01:20:52.413114Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/public/window.svg"
+2026-09-18T01:20:52.413219Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/package.json"
+2026-09-18T01:20:52.413225Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/app/page.tsx"
+2026-09-18T01:20:52.413331Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/eslint.config.mjs"
+2026-09-18T01:20:52.413456Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/components/Navbar.tsx"
+2026-09-18T01:20:52.413542Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/tsconfig.json"
+2026-09-18T01:20:52.413822Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/README.md"
+2026-09-18T01:20:52.413833Z  INFO tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/next.config.ts"
+2026-09-18T01:20:52.414131Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.414158Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.414167Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.417627Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.417645Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.417653Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.417657Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2026-09-18T01:20:52.417731Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "/Users/venkatesh/Documents/sri-portfolio/app/globals.css"
+2026-09-18T01:20:52.417740Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.417745Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.417749Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.417812Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.417821Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.418112Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.418535Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.418543Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.419064Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app"
+2026-09-18T01:20:52.419344Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components"
+2026-09-18T01:20:52.419490Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public"
+2026-09-18T01:20:52.419548Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/academics"
+2026-09-18T01:20:52.419617Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/logos"
+2026-09-18T01:20:52.419959Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.420040Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.420111Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.420116Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: enter
+2026-09-18T01:20:52.420499Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/app"
+2026-09-18T01:20:52.420761Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/components"
+2026-09-18T01:20:52.420882Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public"
+2026-09-18T01:20:52.420973Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/academics"
+2026-09-18T01:20:52.421212Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/venkatesh/Documents/sri-portfolio/public/logos"
+2026-09-18T01:20:52.421669Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: exit
+2026-09-18T01:20:52.425572Z  INFO get_globs: tailwindcss_oxide::scanner: exit

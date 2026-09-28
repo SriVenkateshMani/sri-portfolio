@@ -62,11 +62,11 @@ export default function ExperienceCard({
           hovered ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden`}
       >
-        <ul className="list-disc list-outside pl-6 text-blue-100 text-[15px] leading-relaxed space-y-3 mb-4 marker:text-blue-400">
+        <div className="text-blue-100 text-[15px] leading-relaxed space-y-4 mb-4">
           {responsibilities.map((r, i) => (
-            <li key={i} className="pl-1">{r}</li>
+            <p key={i}>{r}</p>
           ))}
-        </ul>
+        </div>
 
         <div className="flex flex-wrap gap-2">
           {tech.map((t, i) => (

@@ -7,28 +7,28 @@ type SkillGroup = {
 
 const SKILLS: SkillGroup[] = [
   {
-    title: "Programming Languages",
-    skills: ["Python", "Ruby", "C/C++", "Go", "JavaScript", "TypeScript", "Java", "PHP", "HTML", "CSS"],
+    title: "Languages",
+    skills: ["Python", "JavaScript", "TypeScript", "Ruby", "Java", "SQL", "HTML", "CSS"],
   },
   {
-    title: "Frameworks & Technologies",
-    skills: ["Node.js", "Express", "Next.js", "Rails", "Flask", "Django", "FastApi", "React", "Angular", "REST APIs", "GraphQL"],
-  },
-  {
-    title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "SQLite", "Oracle", "Snowflake", "MongoDB", "Redis"],
+    title: "Frameworks & APIs",
+    skills: ["FastAPI", "Flask", "Node.js", "Express.js", "Next.js", "React.js", "Rails", "REST APIs", "GraphQL", "WebSockets"],
   },
   {
     title: "AI / ML",
-    skills: ["TensorFlow", "Keras", "Pandas", "PyTorch", "Scikit-Learn", "PowerBI", "RAG", "LLM", "LangChain", "Gen-AI", "BERT", "DistilBERT"],
+    skills: ["AWS Bedrock", "LangChain", "LangGraph", "Model Context Protocol (MCP)", "RAG", "Vector Search", "Agentic Workflows"],
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["AWS", "Azure", "GCP", "CI/CD", "Kubernetes", "Docker", "Terraform", "Kafka", "Ansible", "Jenkins"],
+    title: "Database & Messaging",
+    skills: ["PostgreSQL / pgvector", "MySQL", "MongoDB", "Redis", "Kafka", "Snowflake"],
   },
   {
-    title: "Observability & Other Tools",
-    skills: ["Grafana", "Prometheus", "Splunk", "Datadog", "Elasticsearch", "CloudWatch", "Alerting", "Git", "GitHub", "Postman", "Agile", "Jira", "VSCode"],
+    title: "Cloud & Infrastructure",
+    skills: ["AWS (EC2, Lambda, ECS, Fargate, S3, SQS, RDS, EKS)", "Docker", "Kubernetes", "Terraform", "Ansible"],
+  },
+  {
+    title: "DevOps",
+    skills: ["CI/CD", "GitHub Actions", "Jenkins", "CloudWatch", "Prometheus", "Grafana"],
   },
 ];
 
