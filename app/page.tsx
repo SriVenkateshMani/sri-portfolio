@@ -12,7 +12,7 @@ import ContactSection from "../components/ContactSection";
 
 const EXPERIENCES = [
   {
-    role: "Full-Stack Developer",
+    role: "Software Engineer",
     company: "Rattlesnake Ramble ORG",
     location: "Boulder, CO",
     duration: "Aug 2025 – Aug 2026",
@@ -26,7 +26,7 @@ const EXPERIENCES = [
     logo: "/logos/rattlesnake_logo.png",
   },
   {
-    role: "Software Development Intern",
+    role: "Software Engineer - AI",
     company: "Biocollate",
     location: "Boulder, CO",
     duration: "Aug 2024 – May 2025",
@@ -109,10 +109,10 @@ export default function Home() {
               Hey there, I&apos;m Sri. I don&apos;t wanna sound like a cover letter, so here&apos;s the simpler version: I&apos;ve spent the last 2 years building AI-enabled full-stack applications end to end and deploying them in the cloud, mostly on AWS. Well, only on AWS. <strong>I LOVE AWS.</strong> Basically taking things from “we should probably build this” to something real people can actually use. <strong>SAY WHAT??</strong>
             </p>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
-              During school, I worked one internship during my Bachelor&apos;s and another during my Master&apos;s. Then came BioCollate, a Boulder startup I worked with in the final year of my Master&apos;s, where I got to take a product from idea to working software and own it end to end. After graduation, I joined Rattlesnake Ramble and spent nearly a year helping migrate a legacy system into a modern full-stack application. I could tell you everything I built at each place, but that would completely ruin the Experience section below, wouldn&apos;t it? <strong>Scroll down 🔫 I dare you.</strong>
+              During school, I worked one internship during my Bachelor&apos;s and another during my Master&apos;s. Then came BioCollate, a Boulder startup I worked with in the final year of my Master&apos;s, where I got to take a product from idea to working software and own it end to end. After graduation, I joined Rattlesnake Ramble and spent a year helping migrate a legacy system into a modern full-stack application. I could tell you everything I built at each place, but that would completely ruin the Experience section below, wouldn&apos;t it? <strong>Scroll down 🔫</strong>
             </p>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
-              Oh yeah, plot twist: I&apos;m an AI Engineer too. At BioCollate, I built CatalystX, a RAG-powered scientific assistant that could search lab data and trace dependencies through natural-language questions, and at Rattlesnake I added LLM tool calling into the admin side of the product. I really like building software end to end and then making it smarter with AI.
+              Oh yeah, plot twist: I&apos;m an AI Engineer too. At BioCollate, I built CatalystX, a RAG-powered scientific assistant that could search lab data and trace dependencies through natural-language questions, and at Rattlesnake I added LLM tool calling into the admin side of the product. I Love building software end to end and then making it smarter with AI.
             </p>
             <p className="text-blue-200 leading-relaxed text-lg md:text-xl text-justify mt-4">
               <strong>Respected Reader</strong>, if you&apos;re short on time and just want the holy document... well, the button below literally says what it is. 👇
@@ -125,7 +125,7 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-blue-300/60 text-blue-50 text-sm font-semibold bg-blue-500/20 hover:bg-blue-500/30 hover:border-white shadow-[0_0_26px_rgba(99,179,237,0.55),0_0_12px_rgba(99,179,237,0.35)] transition duration-200 group"
               >
                 <span className="text-base">&#128196;</span>
-                <span>Here&apos;s the Boring Version :(</span>
+                <span>Lengthy exclusive version of Sri&apos;s resume</span>
                 <span className="opacity-60 group-hover:opacity-100 transition-opacity text-xs">&#8595;</span>
               </a>
             </div>
@@ -217,46 +217,59 @@ export default function Home() {
               Projects
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-6">
+
+              <ProjectCard
+                title="PaperPilot"
+                description={[
+                  `Built PaperPilot, an agentic RAG system for querying AI/ML research papers.`,
+                  `Created an Airflow pipeline that ingests papers from arXiv, parses PDFs with Docling, stores metadata in PostgreSQL, and indexes section-aware chunks in OpenSearch for hybrid BM25 + vector retrieval.`,
+                  `Built the LangGraph workflow with guardrails, tool-based retrieval, document grading, query rewriting, and grounded generation, with Redis caching and Langfuse tracing for performance and observability.`,
+                  `Containerized the stack with Docker across FastAPI, PostgreSQL, OpenSearch, Redis, Airflow, and Ollama.`,
+                ]}
+                tools={["Python", "FastAPI", "LangGraph", "Airflow", "OpenSearch", "PostgreSQL", "Redis", "Langfuse", "Docker", "Ollama"]}
+                github="https://github.com/SriVenkateshMani/PaperPilot"
+              />
 
               <ProjectCard
                 title="RecipeRealm: Recipe Sharing Platform"
-                institution="University of Colorado Boulder"
                 description={[
-                  `Built RecipeRealm, a full-stack recipe-sharing platform with JWT-secured user accounts and social interactions.`,
-                  `Dockerized MERN services and deployed them on AWS EC2 with S3-backed image and video storage, achieving 85% Jest test coverage.`
+                  `Built RecipeRealm, a full-stack social recipe-sharing platform where users can create accounts, publish recipe cards, upload media, like and share recipes, and subscribe to other creators.`,
+                  `Built the application with the MERN stack and JWT-based authentication, with backend APIs handling user accounts, recipe creation, social interactions, and subscription workflows.`,
+                  `Dockerized the application and deployed it on AWS EC2, using Amazon S3 for image and video storage. Added Jest testing across the application and reached roughly 85% test coverage.`
                 ]}
                 tools={["MongoDB", "Express", "React", "Node.js", "JWT", "Docker", "AWS EC2", "Amazon S3", "Jest"]}
                 github="https://github.com/SriVenkateshMani/Recipe-Realm"
               />
               <ProjectCard
                 title="AI-Generated Text Detection"
-                institution="University of Colorado Boulder"
                 description={[
-                  `Fine-tuned BERT, DistilBERT, and GPT-2 using PyTorch and Hugging Face to detect AI-generated text across complex, multisource datasets.`,
-                  `Optimized hyperparameters and engineered a model pipeline that achieved 82.7% evaluation accuracy.`
+                  `Developed an AI-generated text detection pipeline to classify human-written and machine-generated content across multi-source datasets.`,
+                  `Fine-tuned BERT, DistilBERT, and GPT-2 with PyTorch and Hugging Face, comparing model performance across different training configurations.`,
+                  `Improved the preprocessing and hyperparameter setup to reach 82.7% evaluation accuracy on the final model.`
                 ]}
                 tools={["BERT", "DistilBERT", "GPT-2", "PyTorch", "Hugging Face", "Hyperparameter Optimization"]}
                 github="https://github.com/Manojdeep-Dakavaram/NLP_Shared_task"
               />
 
               <ProjectCard
-                title="Local Hybrid RAG System"
-                institution="Personal Project"
+                title="Frameworkless RAG Engine"
                 description={[
-                  `Built a local, end-to-end RAG system from scratch that ingests PDFs, chunks document text, generates embeddings, and indexes content in OpenSearch.`,
-                  `Combined BM25 keyword retrieval with semantic k-NN search using reciprocal-rank fusion, then grounded local Llama 3.2 responses in the highest-ranked document chunks through Ollama.`
+                  `Developed a framework-light local RAG system from scratch, handling PDF ingestion, chunking, embeddings, retrieval, and generation without relying on LangChain or LlamaIndex.`,
+                  `Combined BM25 keyword search with semantic k-NN retrieval in OpenSearch using reciprocal-rank fusion, then grounded local Llama 3.2 responses in the highest-ranked chunks through Ollama.`,
+                  `Built the plumbing myself to understand what RAG frameworks are doing under the hood.`
                 ]}
                 tools={["Python", "Streamlit", "OpenSearch", "Sentence Transformers", "BM25", "k-NN Vector Search", "Reciprocal-Rank Fusion", "Ollama", "Llama 3.2", "Docker"]}
+                github="https://github.com/SriVenkateshMani/local-rag-system"
               />
 
               <ProjectCard
-                title="Hybrid Data Driven Similarity Measures Sentiment Prediction Using Deep Learning Models"
-                institution="SRM Institute of Science & Technology"
+                title="Stock Price Prediction with Sentiment Analysis"
+                className="md:col-span-2 md:w-[calc(50%_-_0.75rem)] md:justify-self-center"
                 description={[
-                  `Engineered an advanced stock price prediction model using machine learning techniques and sentiment analysis.`,
-                  `Constructed few Deep Learning models written in Python, utilizing TensorFlow and Keras to enhance stock price prediction 
-                  accuracy by analyzing sentiment data around 50,000 news.`,
+                  `Developed a stock price prediction system that combined deep learning with financial-news sentiment analysis.`,
+                  `Trained multiple models in Python using TensorFlow and Keras, incorporating sentiment signals from roughly 50,000 news articles alongside historical market data.`,
+                  `Tested whether headlines add any useful signal beyond price history alone.`,
                 ]}
                 tools={["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "Time Series Analysis", "Regression / Forecasting Models", "LSTM (Neural Networks)"]}
                 github="https://github.com/SriVenkateshMani/Stock_prediction"
